@@ -1,26 +1,112 @@
+/* app/globals.css */
 @import "tailwindcss";
-
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  background-color: transparent !important;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+  -webkit-text-fill-color: var(--text-color) !important;
+  transition: background-color 9999s ease-in-out 0s;
+}
+/* ألوان رئيسية */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-primary: #f52cf9;
+  --color-secondary: #12041a;
+}
+.text-primary {
+  color: var(--color-primary);
+}
+/* الخط الافتراضي والخلفية */
+body {
+  font-family: "Josefin Sans", sans-serif;
+  --primary-color: #f200ff; /* اللون عند hover */
+  --color-primary: #f52cf9;
+  --bg-color: #12041a;
+  --color-secondary: #f5f0ff;
+  --text-color: #f5f0ff;
+  cursor: none; /* إخفاء المؤشر الافتراضي */
+  transition: background-color 0.3s, color 0.3s;
+}
+body.light {
+  --bg-color: #f5f0ff;
+  --text-color: #12041a;
+  --primary-color: #f200ff; /* اللون عند hover */
+  --color-primary: #f52cf9; /* اللون الأساسي للكلمة Dev */
+  --color-secondary: #12041a;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+body.dark {
+  --bg-color: #12041a;
+  --text-color: #f5f0ff;
+  --color-secondary: #f5f0ff;
+  --primary-color: #f200ff; /* اللون عند hover */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* NavBar */
+.navbar {
+  color: var(--text-color);
+  display: flex;
+  gap: 2.5rem;
+  font-size: 1.25rem;
+}
+
+.navbar li:hover {
+  color: var(--primary-color);
+}
+
+/* إظهار المؤشر الافتراضي عند hover على عنصر معين */
+.show-default-cursor:hover {
+  cursor: none;
+}
+
+/* Custom animated cursor */
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background: #2696e8;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  box-shadow: 0 0 20px #2696e8, 0 0 60px #2696e8, 0 0 100px #2696e8;
+  animation: colors 5s infinite linear;
+  transform: translate(-50%, -50%);
+}
+
+.cursor::before {
+  content: "";
+  position: absolute;
+  background: #2696e8;
+  width: 50px;
+  height: 50px;
+  opacity: 0.2;
+  transform: translate(-30%, -30%);
+  border-radius: 50%;
+}
+
+/* حركة ألوان المؤشر */
+@keyframes colors {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.animate-floating {
+  animation: floating 2s ease-in-out infinite;
 }
