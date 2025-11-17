@@ -2,7 +2,8 @@ import React, { JSX, ReactNode } from "react";
 import OneSkill from "./OneSkill";
 type Tech = {
   name: string;
-  image: ReactNode;
+  icon: string;
+  image: string;
 };
 type TechProps = {
   technologies: Tech[];

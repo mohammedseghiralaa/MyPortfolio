@@ -1,10 +1,13 @@
 "use client";
 import React, { JSX } from "react";
 import { FaDownload } from "react-icons/fa";
+import { useInfoCv } from "../context/CvContext";
 
 export default function DownloadCv(): JSX.Element {
+  const { MyCv } = useInfoCv();
   return (
-    <button
+    <a
+      href={MyCv}
       className="
         show-default-cursor
         relative inline-flex items-center overflow-hidden border-2 font-bold
@@ -42,6 +45,6 @@ export default function DownloadCv(): JSX.Element {
           boxShadow: `0 0 20px 0 var(--primary-color)`,
         }}
       ></span>
-    </button>
+    </a>
   );
 }

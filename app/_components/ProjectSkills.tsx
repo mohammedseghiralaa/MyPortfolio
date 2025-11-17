@@ -14,7 +14,7 @@ export default function ProjectSkills(): JSX.Element {
       <div className="flex flex-1  sm:flex-row  sm:items-center justify-between border-b border-gray-500 pb-2 sm:pb-1 gap-2 sm:gap-4   ">
         <AnimatePresence mode="wait">
           <motion.h3
-            key={skills}
+            key={currentProject.id}
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 20 }}
@@ -22,7 +22,7 @@ export default function ProjectSkills(): JSX.Element {
             className="  text-sm sm:text-base md:text-lg uppercase tracking-wide "
             style={{ color: "var(--color-primary)" }}
           >
-            {skills}
+            {skills.join(" . ")}
           </motion.h3>
         </AnimatePresence>
 

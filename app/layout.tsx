@@ -7,6 +7,10 @@ import CustomCursor from "./_components/CustomCursor";
 import { ThemeProvider } from "./context/ThemeContext";
 import { JSX } from "react";
 import { ProjectProvider } from "./context/ProjectContext";
+import { SanityLive } from "@/sanity/lib/live";
+import { InfoCvProvider } from "./context/CvContext";
+import { SkillsProvider } from "./context/SkillsContext";
+import "devicon/devicon.min.css";
 
 const poppins = Poppins({
   weight: ["400", "600"], // السماكات المتاحة
@@ -36,9 +40,14 @@ export default function RootLayout({
             <Header />
             <AnimatedBackground />
             <CustomCursor />
-            <main className={`${josefin.className} overflow-hidden`}>
-              {children}
-            </main>
+            <SkillsProvider>
+              <InfoCvProvider>
+                <main className={`${josefin.className} overflow-hidden`}>
+                  {children}
+                </main>
+              </InfoCvProvider>
+            </SkillsProvider>
+            <SanityLive />
           </body>
         </ProjectProvider>
       </ThemeProvider>

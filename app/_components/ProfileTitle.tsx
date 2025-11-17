@@ -1,8 +1,9 @@
 "use client";
 import React, { JSX } from "react";
 import { Typewriter } from "react-simple-typewriter";
-
+import { useInfoCv } from "@/app/context/CvContext";
 export default function ProfileTitle(): JSX.Element {
+  const { skills, myDescription } = useInfoCv();
   return (
     <div className="flex flex-col gap-4 md:gap-5">
       <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold text-(--text-color)">
@@ -15,11 +16,7 @@ export default function ProfileTitle(): JSX.Element {
 
       <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-cyan-400 min-h-[3rem] sm:min-h-[3.5rem] md:min-h-[4rem] lg:min-h-[4.5rem] xl:min-h-[5rem] leading-tight">
         <Typewriter
-          words={[
-            "Full Stack Web Developer",
-            "React Developer",
-            "UI/UX Enthusiast",
-          ]}
+          words={skills}
           loop={0} // 0 = infinite loop
           cursor
           cursorStyle="|"
@@ -30,9 +27,7 @@ export default function ProfileTitle(): JSX.Element {
       </h1>
 
       <p className="text-base sm:text-xl md:text-2xl max-w-full md:max-w-[500px] lg:max-w-[600px] text-[var(--color-secondary)]">
-        I design and develop interactive web applications that solve real-world
-        problems, improve user engagement, and leave a meaningful and lasting
-        impact.
+        {myDescription}
       </p>
     </div>
   );
