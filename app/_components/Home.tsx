@@ -1,3 +1,4 @@
+"use client";
 import React, { JSX } from "react";
 import ProfileCard from "./ProfileCard";
 import ProfileImage from "./ProfileImage";

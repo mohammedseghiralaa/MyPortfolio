@@ -1,3 +1,4 @@
+"use client";
 import React, { JSX } from "react";
 import Title from "./Title";
 import AboutCart from "./AboutCart";

@@ -1,5 +1,5 @@
+"use client";
 import React, { JSX } from "react";
-import Home from "./Home";
 import Title from "./Title";
 import SendMessage from "./SendMessage";
 import EndPage from "./EndPage";

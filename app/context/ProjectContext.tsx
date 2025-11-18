@@ -33,7 +33,6 @@ export function ProjectProvider({ children }: ProjectProviderProps) {
   useEffect(() => {
     fetchProjects().then((data) => setMyProjects(data));
   }, []);
-  console.log(MyProjects);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const currentProject = MyProjects[currentIndex];
   const ProjectLength = MyProjects.length;

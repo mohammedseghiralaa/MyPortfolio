@@ -1,3 +1,4 @@
+"use client";
 import React, { JSX } from "react";
 
 export default function EndPage(): JSX.Element {

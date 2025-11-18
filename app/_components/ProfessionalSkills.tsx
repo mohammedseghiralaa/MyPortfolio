@@ -1,3 +1,4 @@
+"use client";
 import React, { JSX } from "react";
 import SkillCircle from "./SkillCircle";
 import Title from "./Title";
