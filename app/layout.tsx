@@ -36,6 +36,13 @@ export default function RootLayout({
     <html lang="en">
       <ThemeProvider>
         <ProjectProvider>
+          <head>
+            {" "}
+            <meta
+              name="google-site-verification"
+              content="0hF_3rqUgTDlL37-QqwrIyMqgKgKfmQX2iFcmQTcoN8"
+            />
+          </head>
           <body className={`${poppins.className} relative `}>
             <Header />
             <AnimatedBackground />
