@@ -1,12 +1,18 @@
 "use client";
 
-import { createContext, ReactNode, useContext, useState } from "react";
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 import { fetchProjects } from "../services/sanity";
 type Project = {
   id: number;
   name: string;
   description: string;
-  image: string;
+  images: [];
   skills: string[];
   url: string;
 };
@@ -15,16 +21,19 @@ type ProjectContextType = {
   ProjectLength: number;
   goNext: () => void;
   goPrev: () => void;
-  currentProject: Project;
+  currentProject: Project | null;
 };
-const initialValue: Project[] = await fetchProjects();
-console.log(initialValue);
 type ProjectProviderProps = {
   children: ReactNode;
 };
 const ProjectContext = createContext<ProjectContextType | undefined>(undefined);
 export function ProjectProvider({ children }: ProjectProviderProps) {
-  const MyProjects = initialValue;
+  const [MyProjects, setMyProjects] = useState<Project[]>([]);
+
+  useEffect(() => {
+    fetchProjects().then((data) => setMyProjects(data));
+  }, []);
+  console.log(MyProjects);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const currentProject = MyProjects[currentIndex];
   const ProjectLength = MyProjects.length;

@@ -5,6 +5,9 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function ProjectInf(): JSX.Element {
   const { currentProject } = useProject();
+  if (!currentProject) {
+    return <div>Loading</div>;
+  }
   const { id, name, description } = currentProject;
 
   const variants = {

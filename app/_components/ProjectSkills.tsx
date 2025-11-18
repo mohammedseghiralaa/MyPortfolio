@@ -7,6 +7,9 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function ProjectSkills(): JSX.Element {
   const { currentProject } = useProject();
+  if (!currentProject) {
+    return <div>Loading...</div>;
+  }
   const { skills } = currentProject;
 
   return (

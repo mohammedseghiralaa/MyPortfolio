@@ -23,10 +23,8 @@ export const ProjectsType = defineType({
     defineField({
       name: "image",
       title: "Image",
-      type: "image", // for images stored in Sanity
-      options: {
-        hotspot: true, // allows cropping
-      },
+      type: "array", // for images stored in Sanity
+      of: [{ type: "image" }],
     }),
     defineField({
       name: "skills",

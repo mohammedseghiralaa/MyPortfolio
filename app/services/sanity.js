@@ -15,7 +15,7 @@ export async function fetchProjects() {
       id,
       name,
       description,
-      "image":image.asset->url,
+"images": image[].asset->url,
       skills,
       url
     }`
