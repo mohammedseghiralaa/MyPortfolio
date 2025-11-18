@@ -1,4 +1,4 @@
-import React, { JSX, ReactNode } from "react";
+import React, { JSX } from "react";
 import OneSkill from "./OneSkill";
 type Tech = {
   name: string;

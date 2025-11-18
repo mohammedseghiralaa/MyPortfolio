@@ -1,7 +1,7 @@
 "use client";
 import React, { JSX } from "react";
 import { useProject } from "../context/ProjectContext";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 
 export default function ProjectInf(): JSX.Element {
   const { currentProject } = useProject();
@@ -10,16 +10,15 @@ export default function ProjectInf(): JSX.Element {
   }
   const { id, name, description } = currentProject;
 
-  const variants = {
+  const variants: Variants = {
     hidden: { opacity: 0, y: 20 },
-    visible: (i: number) => ({
+    visible: (i = 0) => ({
       opacity: 1,
       y: 0,
       transition: { delay: i * 0.2, duration: 0.5, ease: "easeOut" },
     }),
     exit: { opacity: 0, y: -20, transition: { duration: 0.3 } },
   };
-
   return (
     <div className="w-full sm:w-1/2  sm:px-0 relative">
       <AnimatePresence mode="wait">

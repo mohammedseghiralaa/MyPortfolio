@@ -5,6 +5,9 @@ import { useProject } from "../context/ProjectContext";
 
 export default function UrlProject() {
   const { currentProject } = useProject();
+  if (!currentProject) {
+    return <div>Loading....</div>;
+  }
   const { url } = currentProject;
   return (
     <div className="flex justify-center items-center">
