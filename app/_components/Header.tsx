@@ -29,14 +29,13 @@ export default function Header(): JSX.Element {
     <header className="fixed top-0 left-0 w-full z-50">
       {/* Main Header Bar */}
       <div
-        className={`flex items-center justify-between px-4 md:px-8 lg:px-17 py-4 border-b backdrop-blur-sm bg-primary/10 border-primary/20
-        transition-all duration-700 ease-out
-        ${
-          isPageLoaded
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 -translate-y-6"
-        }
-        `}
+        className={`flex items-center justify-between px-4 md:px-8 lg:px-17 py-4 border-b
+    bg-primary/20 border-primary/20
+    backdrop-blur-sm
+    transition-all duration-700 ease-out
+    ${isPageLoaded ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"}
+  `}
+        style={{ WebkitBackdropFilter: "blur(8px)" }}
       >
         <Logo />
 
