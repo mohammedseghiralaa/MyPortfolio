@@ -30,7 +30,7 @@ export default function Header(): JSX.Element {
       {/* Main Header Bar */}
       <div
         className={`flex items-center justify-between px-4 md:px-8 lg:px-17 py-4 border-b
-    bg-primary/20 border-primary/20
+     border-primary/20
     backdrop-blur-sm
     transition-all duration-700 ease-out
     ${isPageLoaded ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"}
@@ -47,7 +47,6 @@ export default function Header(): JSX.Element {
 
         {/* Mobile Menu Toggle */}
         <div className="flex md:hidden items-center gap-4">
-          <ToggleButton />
           <button
             onClick={toggleMobileMenu}
             className="p-2 rounded-lg hover:bg-primary/10 transition-colors"
