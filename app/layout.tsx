@@ -37,7 +37,6 @@ export default function RootLayout({
       <ThemeProvider>
         <ProjectProvider>
           <head>
-            {" "}
             <meta
               name="google-site-verification"
               content="0hF_3rqUgTDlL37-QqwrIyMqgKgKfmQX2iFcmQTcoN8"

@@ -22,7 +22,6 @@ export default function ProfessionalSkills(): JSX.Element {
             label={skill.label}
           />
         ))}
-        3{" "}
       </div>
     </div>
   );
