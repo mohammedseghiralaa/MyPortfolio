@@ -44,16 +44,13 @@ body.dark {
   --color-secondary: #f5f0ff;
   --primary-color: #f200ff; /* اللون عند hover */
 }
-body,
-.navbar,
-p,
-h1,
-h2,
-h3,
-span,
-a {
-  color: var(--text-color);
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #12041a inset !important; /* خلفية متوافقة مع dark mode */
+  -webkit-text-fill-color: #f5f0ff !important; /* اللون اللي تبيه */
 }
+
 /* NavBar */
 .navbar {
   color: var(--text-color);
@@ -124,4 +121,24 @@ a {
 
 .animate-floating {
   animation: floating 2s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+  body {
+    cursor: auto !important; /* إرجاع المؤشر الطبيعي */
+  }
+
+  .cursor {
+    display: none; /* إخفاء المؤشر المخصص */
+  }
+}
+
+@media (hover: none) {
+  body {
+    cursor: auto !important;
+  }
+
+  .cursor {
+    display: none;
+  }
 }
