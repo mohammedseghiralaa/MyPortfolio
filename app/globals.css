@@ -8,6 +8,7 @@ select:-webkit-autofill {
   -webkit-text-fill-color: var(--text-color) !important;
   transition: background-color 9999s ease-in-out 0s;
 }
+
 /* ألوان رئيسية */
 :root {
   --color-primary: #f52cf9;
@@ -25,7 +26,9 @@ body {
   --color-secondary: #f5f0ff;
   --text-color: #f5f0ff;
   cursor: none; /* إخفاء المؤشر الافتراضي */
-  transition: background-color 0.3s, color 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 body.light {
   --bg-color: #f5f0ff;
@@ -41,7 +44,16 @@ body.dark {
   --color-secondary: #f5f0ff;
   --primary-color: #f200ff; /* اللون عند hover */
 }
-
+body,
+.navbar,
+p,
+h1,
+h2,
+h3,
+span,
+a {
+  color: var(--text-color);
+}
 /* NavBar */
 .navbar {
   color: var(--text-color);
@@ -70,7 +82,10 @@ body.dark {
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
-  box-shadow: 0 0 20px #2696e8, 0 0 60px #2696e8, 0 0 100px #2696e8;
+  box-shadow:
+    0 0 20px #2696e8,
+    0 0 60px #2696e8,
+    0 0 100px #2696e8;
   animation: colors 5s infinite linear;
   transform: translate(-50%, -50%);
 }
