@@ -10,7 +10,8 @@ export default function AboutCart(): JSX.Element {
           color: "var(--text-color)",
           transition: "color 0.3s",
         }}
-        className="flex-2 text-base leading-relaxed  sm:text-lg md:text-xl lg:text-2xl text-stone-300 text-center md:text-left"
+        dir="rtl"
+        className="flex-2 text-left  text-base leading-relaxed  sm:text-lg md:text-xl lg:text-2xl text-stone-300 "
       >
         I’m{" "}
         <span
