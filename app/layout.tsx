@@ -11,7 +11,6 @@ import { SanityLive } from "@/sanity/lib/live";
 import { InfoCvProvider } from "./context/CvContext";
 import { SkillsProvider } from "./context/SkillsContext";
 import "devicon/devicon.min.css";
-
 const poppins = Poppins({
   weight: ["400", "600"], // السماكات المتاحة
   subsets: ["latin"],
@@ -25,6 +24,9 @@ const josefin = Josefin_Sans({
 export const metadata: Metadata = {
   title: "Portfolio",
   description: "Mohammed seghir alaaeddine web developer portfolio",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({

@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function AboutImage() {
   return (
     <div className="flex items-center justify-center">
-      <div className="relative w-75 h-75 mx-auto">
+      <div className="relative w-50 h-50 sm:w-75 sm:h-75 mx-auto">
         {/* Rotating gradient border */}
         <div
           className="absolute -inset-1 rounded-full bg-gradient-to-r from-purple-700 via-pink-400 to-transparent opacity-65 blur-sm animate-spin"

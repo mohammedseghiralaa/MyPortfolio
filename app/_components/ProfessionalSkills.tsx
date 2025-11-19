@@ -12,9 +12,9 @@ const skills = [
 
 export default function ProfessionalSkills(): JSX.Element {
   return (
-    <div className="flex flex-col items-center justify-center pt-8 px-4 sm:px-6 md:px-12">
-      <Title>My Professional Skills</Title>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-10 md:gap-16 pt-5 w-full justify-items-center">
+    <div className=" flex flex-col items-center justify-center pt-8">
+      <Title>My Prefessional Skills</Title>
+      <div className="grid grid-cols-2 gap-12 md:gap-16 pt-5">
         {skills.map((skill, index) => (
           <SkillCircle
             key={index}

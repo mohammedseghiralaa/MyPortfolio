@@ -14,7 +14,7 @@ export default function SubContact({ items }: SubContactProps): JSX.Element {
       {items.map((item) => (
         <div
           key={item.name}
-          className="flex flex-col sm:flex-row gap-2 sm:gap-4 items-start sm:items-center"
+          className="flex flex-row gap-2 sm:gap-4 items-start sm:items-center"
         >
           <a
             href={item.link}

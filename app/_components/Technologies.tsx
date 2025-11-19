@@ -10,7 +10,7 @@ type TechProps = {
 };
 export default function Technologies({ technologies }: TechProps): JSX.Element {
   return (
-    <div className="flex justify-center gap-6  flex-wrap">
+    <div className="flex justify-center gap-2 sm:gap-6  flex-wrap">
       {technologies.map((tech) => (
         <OneSkill tech={tech} key={tech.name} />
       ))}

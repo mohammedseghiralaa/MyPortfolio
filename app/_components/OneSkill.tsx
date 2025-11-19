@@ -18,8 +18,8 @@ export default function OneSkill({ tech }: OneSkillProps): JSX.Element {
   return (
     <div
       className="
-      w-32 sm:w-36 md:w-40 lg:w-44 xl:w-48 
-      h-32 sm:h-36 md:h-40 lg:h-44 xl:h-48 
+      w-20 sm:w-36 md:w-40 lg:w-44 xl:w-48 
+      h-20 sm:h-36 md:h-40 lg:h-44 xl:h-48 
       border-2 border-gray-700 rounded-2xl 
       hover:border-purple-500 hover:scale-105 
       transition-all duration-300 
