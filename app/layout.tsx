@@ -50,13 +50,11 @@ export default function RootLayout({
             <AnimatedBackground />
             <CustomCursor />
             <SkillsProvider>
-              <Suspense fallback={<Spinner />}>
-                <InfoCvProvider>
-                  <main className={`${josefin.className} overflow-hidden`}>
-                    {children}
-                  </main>
-                </InfoCvProvider>
-              </Suspense>
+              <InfoCvProvider>
+                <main className={`${josefin.className} overflow-hidden`}>
+                  {children}
+                </main>
+              </InfoCvProvider>
             </SkillsProvider>
             <SanityLive />
           </body>

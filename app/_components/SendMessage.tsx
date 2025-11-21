@@ -23,8 +23,8 @@ export default function SendMessage(): JSX.Element {
     {
       icon: <FaGlobe className="w-5 h-5 sm:w-7 sm:h-7" />,
       name: "web",
-      content: "alaamohammedseghir.com",
-      link: "https://alaamohammedseghir.com",
+      content: "https://alaa-portfolio-tau.vercel.app/",
+      link: "https://alaa-portfolio-tau.vercel.app/",
     },
   ];
 
