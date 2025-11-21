@@ -35,7 +35,7 @@ export function ProjectProvider({ children }: ProjectProviderProps) {
       setMyProjects(data.sort((a: Project, b: Project) => a.id - b.id))
     );
   }, []);
-  const [currentIndex, setCurrentIndex] = useState<number>(1);
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
   const currentProject = MyProjects[currentIndex];
   const ProjectLength = MyProjects.length;
   function goNext() {
