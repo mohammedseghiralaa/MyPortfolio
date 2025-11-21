@@ -2,9 +2,11 @@
 import React, { JSX } from "react";
 import { FaDownload } from "react-icons/fa";
 import { useInfoCv } from "../context/CvContext";
+import Spinner from "./Spinner";
 
 export default function DownloadCv(): JSX.Element {
   const { MyCv } = useInfoCv();
+  if (!MyCv) return <Spinner />;
   return (
     <a
       href={MyCv}

@@ -4,8 +4,10 @@ import SubTitle from "./SubTitle";
 import { Terminal } from "lucide-react";
 import Technologies from "./Technologies";
 import { useSkills } from "../context/SkillsContext";
+import Spinner from "./Spinner";
 export default function Tools(): JSX.Element {
   const { tools } = useSkills();
+  if (!tools) return <Spinner />;
   return (
     <div className="flex flex-col items-center">
       <SubTitle

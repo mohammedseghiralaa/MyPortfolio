@@ -2,8 +2,12 @@
 import React, { JSX } from "react";
 import { Typewriter } from "react-simple-typewriter";
 import { useInfoCv } from "@/app/context/CvContext";
+import Spinner from "./Spinner";
 export default function ProfileTitle(): JSX.Element {
   const { skills, myDescription } = useInfoCv();
+  if (!skills || !myDescription) {
+    return <Spinner />;
+  }
   return (
     <div className="flex flex-col gap-4 md:gap-5">
       <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold text-(--text-color)">

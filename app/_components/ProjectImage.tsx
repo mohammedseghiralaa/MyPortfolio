@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useProject } from "../context/ProjectContext";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
+import Spinner from "./Spinner";
 
 export default function ProjectImage() {
   const { currentProject } = useProject();
@@ -14,13 +15,7 @@ export default function ProjectImage() {
     setCurrentImageIndex(0);
   }, [currentProject]);
   if (!currentProject || !currentProject.images.length) {
-    return (
-      <div className="relative w-full sm:w-[400px] md:w-[500px] lg:w-[600px] aspect-video rounded-2xl overflow-hidden bg-gradient-to-br from-gray-200 via-gray-300 to-gray-400 shrink-0 shadow-2xl flex items-center justify-center">
-        <div className="animate-pulse text-gray-600 font-medium">
-          Loading....
-        </div>
-      </div>
-    );
+    return <Spinner />;
   }
 
   const { images } = currentProject;

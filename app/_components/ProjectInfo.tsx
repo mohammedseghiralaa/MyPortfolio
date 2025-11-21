@@ -2,11 +2,12 @@
 import React, { JSX } from "react";
 import { useProject } from "../context/ProjectContext";
 import { motion, AnimatePresence, Variants } from "framer-motion";
+import Spinner from "./Spinner";
 
 export default function ProjectInf(): JSX.Element {
   const { currentProject } = useProject();
   if (!currentProject) {
-    return <div>Loading</div>;
+    return <Spinner />;
   }
   const { id, name, description } = currentProject;
 

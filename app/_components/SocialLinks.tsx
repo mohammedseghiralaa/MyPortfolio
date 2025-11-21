@@ -7,6 +7,7 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 import { useInfoCv } from "../context/CvContext";
+import Spinner from "./Spinner";
 const iconMap: Record<string, JSX.Element> = {
   Telegram: <FaTelegramPlane />,
   GitHub: <FaGithub />,
@@ -22,6 +23,7 @@ const colorMap: Record<string, string> = {
 };
 export default function SocialLinks(): JSX.Element {
   const { contacts } = useInfoCv();
+  if (!contacts) return <Spinner />;
   return (
     <div className="flex items-center gap-3 sm:gap-4 md:gap-5">
       {contacts.map((contact) => {

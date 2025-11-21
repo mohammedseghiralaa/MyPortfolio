@@ -4,11 +4,12 @@ import UrlProject from "./UrlProject";
 import NavigationButton from "./NavigationButton";
 import { useProject } from "../context/ProjectContext";
 import { motion, AnimatePresence } from "framer-motion";
+import Spinner from "./Spinner";
 
 export default function ProjectSkills(): JSX.Element {
   const { currentProject } = useProject();
   if (!currentProject) {
-    return <div>Loading...</div>;
+    return <Spinner />;
   }
   const { skills } = currentProject;
 

@@ -5,12 +5,13 @@ import "./globals.css";
 import { Poppins, Josefin_Sans } from "next/font/google";
 import CustomCursor from "./_components/CustomCursor";
 import { ThemeProvider } from "./context/ThemeContext";
-import { JSX } from "react";
+import { JSX, Suspense } from "react";
 import { ProjectProvider } from "./context/ProjectContext";
 import { SanityLive } from "@/sanity/lib/live";
 import { InfoCvProvider } from "./context/CvContext";
 import { SkillsProvider } from "./context/SkillsContext";
 import "devicon/devicon.min.css";
+import Spinner from "./_components/Spinner";
 const poppins = Poppins({
   weight: ["400", "600"], // السماكات المتاحة
   subsets: ["latin"],
@@ -49,11 +50,13 @@ export default function RootLayout({
             <AnimatedBackground />
             <CustomCursor />
             <SkillsProvider>
-              <InfoCvProvider>
-                <main className={`${josefin.className} overflow-hidden`}>
-                  {children}
-                </main>
-              </InfoCvProvider>
+              <Suspense fallback={<Spinner />}>
+                <InfoCvProvider>
+                  <main className={`${josefin.className} overflow-hidden`}>
+                    {children}
+                  </main>
+                </InfoCvProvider>
+              </Suspense>
             </SkillsProvider>
             <SanityLive />
           </body>

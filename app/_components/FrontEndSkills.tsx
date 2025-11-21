@@ -4,8 +4,10 @@ import { PenTool } from "lucide-react";
 import SubTitle from "./SubTitle";
 import Technologies from "./Technologies";
 import { useSkills } from "../context/SkillsContext";
+import Spinner from "./Spinner";
 export default function FrontEndSkills(): JSX.Element {
   const { frontEnd } = useSkills();
+  if (!frontEnd) return <Spinner />;
   return (
     <div className="flex flex-col items-center">
       <SubTitle

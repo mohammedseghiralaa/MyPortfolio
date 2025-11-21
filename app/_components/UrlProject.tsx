@@ -2,11 +2,12 @@ import React from "react";
 import { FaGithub } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import { useProject } from "../context/ProjectContext";
+import Spinner from "./Spinner";
 
 export default function UrlProject() {
   const { currentProject } = useProject();
   if (!currentProject) {
-    return <div>Loading....</div>;
+    return <Spinner />;
   }
   const { url } = currentProject;
   return (

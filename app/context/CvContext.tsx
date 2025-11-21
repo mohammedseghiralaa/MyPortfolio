@@ -1,5 +1,11 @@
 "use client";
-import { createContext, ReactNode, useContext } from "react";
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 import { fetchCv } from "@/app/services/sanity";
 type ContactType = {
   label: string;
@@ -18,9 +24,18 @@ const InfoCvContext = createContext<InfoCvContextType | undefined>(undefined);
 type InfoCvProviderProps = {
   children: ReactNode;
 };
-const initialvalues = await fetchCv();
 export function InfoCvProvider({ children }: InfoCvProviderProps) {
-  const cvInfo = initialvalues;
+  const [cvInfo, setcvInfo] = useState<InfoCvContextType>({
+    MyCv: "",
+    ProfileImage: "",
+    skills: [],
+    myDescription: "",
+    contacts: [],
+  });
+
+  useEffect(() => {
+    fetchCv().then((data) => setcvInfo(data));
+  }, []);
   const { MyCv, skills, ProfileImage, myDescription, contacts } = cvInfo;
   return (
     <InfoCvContext.Provider

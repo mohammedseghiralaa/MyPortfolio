@@ -4,8 +4,10 @@ import SubTitle from "./SubTitle";
 import { Server } from "lucide-react";
 import Technologies from "./Technologies";
 import { useSkills } from "../context/SkillsContext";
+import Spinner from "./Spinner";
 export default function BackEndSkills() {
   const { backEnd } = useSkills();
+  if (!backEnd) return <Spinner />;
   return (
     <div className="flex flex-col items-center">
       <SubTitle

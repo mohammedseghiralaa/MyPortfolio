@@ -31,9 +31,11 @@ export function ProjectProvider({ children }: ProjectProviderProps) {
   const [MyProjects, setMyProjects] = useState<Project[]>([]);
 
   useEffect(() => {
-    fetchProjects().then((data) => setMyProjects(data));
+    fetchProjects().then((data) =>
+      setMyProjects(data.sort((a: Project, b: Project) => a.id - b.id))
+    );
   }, []);
-  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [currentIndex, setCurrentIndex] = useState<number>(1);
   const currentProject = MyProjects[currentIndex];
   const ProjectLength = MyProjects.length;
   function goNext() {
