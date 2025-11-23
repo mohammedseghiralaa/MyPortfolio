@@ -22,7 +22,7 @@ const josefin = Josefin_Sans({
   display: "swap", // لتحسين التحميل
 });
 export const metadata: Metadata = {
-  title: "Portfolio",
+  title: "Mohammedseghir Alaa || Full Stack Web Developer",
   description: "Mohammed seghir alaaeddine web developer portfolio",
   icons: {
     icon: "/favicon.ico",
