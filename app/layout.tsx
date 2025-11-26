@@ -39,6 +39,7 @@ export default function RootLayout({
       <ThemeProvider>
         <ProjectProvider>
           <head>
+            <title>Mohammed seghir Alaaeddine</title>
             <meta
               name="google-site-verification"
               content="0hF_3rqUgTDlL37-QqwrIyMqgKgKfmQX2iFcmQTcoN8"
