@@ -79,5 +79,30 @@ export const SkillsType = defineType({
         },
       ],
     }),
+
+    // Machine Learning & Data Science
+    defineField({
+      name: "machineLearning",
+      title: "Machine Learning & Data Science",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          fields: [
+            { name: "label", title: "Label", type: "string" },
+            {
+              name: "skillicon",
+              title: "Skill Icon",
+              type: "string",
+            },
+            {
+              name: "skillimage",
+              title: "Skill Image",
+              type: "string",
+            },
+          ],
+        },
+      ],
+    }),
   ],
 });
