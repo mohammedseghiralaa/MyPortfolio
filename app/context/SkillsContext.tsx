@@ -18,6 +18,7 @@ interface SkillsContextType {
   frontEnd: Skill[];
   backEnd: Skill[];
   tools: Skill[];
+  machineLearning: Skill[];
 }
 
 interface SkillsProviderProps {
@@ -31,6 +32,7 @@ const defaultSkills: SkillsContextType = {
   frontEnd: [],
   backEnd: [],
   tools: [],
+  machineLearning: [],
 };
 
 export function SkillsProvider({ children }: SkillsProviderProps) {
@@ -40,10 +42,12 @@ export function SkillsProvider({ children }: SkillsProviderProps) {
     fetchSkills().then((data) => setSkills(data));
   }, []);
 
-  const { frontEnd, backEnd, tools } = skills;
+  const { frontEnd, backEnd, tools, machineLearning } = skills;
 
   return (
-    <SkillsContext.Provider value={{ frontEnd, backEnd, tools }}>
+    <SkillsContext.Provider
+      value={{ frontEnd, backEnd, tools, machineLearning }}
+    >
       {children}
     </SkillsContext.Provider>
   );

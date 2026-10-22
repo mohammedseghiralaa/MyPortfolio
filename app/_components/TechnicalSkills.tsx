@@ -2,6 +2,7 @@ import { JSX } from "react";
 import FrontEndSkills from "./FrontEndSkills";
 import BackEndSkills from "./BackEndSkills";
 import Tools from "./Tools";
+import MachineLearning from "./MachineLearning";
 import Title from "./Title";
 
 export default function TechnicalSkills(): JSX.Element {
@@ -10,6 +11,8 @@ export default function TechnicalSkills(): JSX.Element {
       <Title>My Technical Skills</Title>
       <FrontEndSkills />
       <BackEndSkills />
+      <MachineLearning />
+
       <Tools />
     </div>
   );

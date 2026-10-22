@@ -5,7 +5,7 @@ export async function fetchCv() {
     `*[_type == "cv"][0]{"MyCv":cvFile.asset->url, skills,"ProfileImage":ProfileImage.asset->url,myDescription, contacts[] {
         label,
         url
-      }}`
+      }}`,
   );
   return CvInfo;
 }
@@ -18,7 +18,7 @@ export async function fetchProjects() {
 "images": image[].asset->url,
       skills,
       url
-    }`
+    }`,
   );
   return projects;
 }
@@ -28,20 +28,24 @@ export async function fetchSkills() {
       frontEnd[]{
         "name":label,
         "icon": skillicon,
-         "image":skillimage,
+        "image":skillimage,
       },
       backEnd[]{
         "name":label,
         "icon": skillicon,
- "image":skillimage,
+        "image":skillimage,
       },
       tools[]{
         "name":label,
         "icon": skillicon,
-         "image":skillimage,
-
+        "image":skillimage,
+      },
+      machineLearning[]{
+        "name":label,
+        "icon": skillicon,
+        "image":skillimage,
       }
-    }`
+    }`,
   );
 
   return skills;
