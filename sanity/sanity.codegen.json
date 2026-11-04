@@ -1,5 +1,0 @@
-{
-  "schemaPath": "./sanity/schemas/schema.ts",
-  "outputPath": "./sanity/types/sanity.d.ts",
-  "typescript": true
-}
