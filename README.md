@@ -16,8 +16,8 @@ Next.js, TypeScript, Tailwind CSS, Sanity CMS, Vercel
 
 ## Run it locally
 ```bash
-git clone https://github.com/mohammedseghiralaa/YOUR-REPO-NAME.git
-cd YOUR-REPO-NAME
+git clone https://github.com/mohammedseghiralaa/MyPortfolio.git
+cd MyPortfolio
 npm install
 npm run dev
 ```
