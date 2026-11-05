@@ -50,3 +50,16 @@ export async function fetchSkills() {
 
   return skills;
 }
+export async function fetchCertificates() {
+  const certificates = await client.fetch(
+    `*[_type == "certificate"] | order(issueDate desc){
+      _id,
+      title,
+      issuer,
+      issueDate,
+      credentialUrl,
+      "image": image.asset->url
+    }`,
+  );
+  return certificates;
+}
